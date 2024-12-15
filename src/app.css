@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+      --primary: 12 78% 93%;
+      --primary-foreground: 240 10% 3.9%;
+      --secondary: 150 30% 85%;
+      --secondary-foreground: 40 10% 3.9%;
+      --accent: 25 80% 70%;
+      --accent-foreground: 240 10% 3.9%;
+      --neutral: 240 10% 15%;
+      --neutral-foreground: 240 10% 90%;
+      --background: 0 0% 98%;
+      --foreground: 240 10% 3.9%;
+      --muted: 240 4.8% 95.9%;
+      --muted-foreground: 240 3.8% 46.1%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 240 10% 3.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 240 10% 3.9%;
+      --border: 240 5.9% 90%;
+      --input: 240 5.9% 90%;
+      --ring: 240 10% 3.9%;
+      --radius: 0.5rem;
+  }
+
+  :root:has(input.theme-controller[value="coffee"]:checked) {
+    --background: 306 19% 11% ;
+    --foreground: 37 47% 57%;
+    --muted: 306 19% 15%;
+    --muted-foreground: 37 47% 60%;
+    --popover: 306 19% 11%;
+    --popover-foreground: 37 47% 57%;
+    --card: 306 19% 11%;
+    --card-foreground: 37 47% 57%;
+    --border: 306 19% 15%;
+    --input: 306 19% 11%;
+    --primary: 37 47% 57%;
+    --primary-foreground: 306 19% 11%;
+    --secondary: 37 47% 57%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 306 19% 20%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 37 47% 57%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 37 47% 57%;
+	  --sidebar-background: 306 19% 11%;
+    --sidebar-foreground: 37 47% 57%;
+    --sidebar-primary: 37 47% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 185 25% 20%;
+    --sidebar-accent-foreground: 0 4.8% 95.9%;
+    --sidebar-border: 306 19% 15%;
+    --sidebar-ring: 37 47% 57%;
+    --radius: 0.5rem;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss"
+  ],
+  "pluginSearchDirs": ["."],
+  "overrides": [
+    { "files": "*.svelte", "options": { "parser": "svelte" } }
+  ],
+  "svelteSortOrder": "options-styles-scripts-markup",
+  "svelteBracketNewLine": true,
+  "svelteAllowShorthand": true,
+  "svelteIndentScriptAndStyle": true,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false,
+  "experimentalTernaries": true,
+  "printWidth": 70,
+  "useTabs": false,
+  "quoteProps": "consistent",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "proseWrap": "always"
+}
