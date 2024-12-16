@@ -1,6 +1,6 @@
 {
-  "name": "toorust",
-  "description": "A collection of blazingly fast tools.",
+  "name": "tooloxide",
+  "description": "A collection of blazingly fast tools. SvelteKit + Rust <3",
   "author": "Hongmeng Zhai <zhaihongmeng@gmail.com>",
   "version": "0.1.0",
   "type": "module",
@@ -8,9 +8,10 @@
     "node": ">=22.11.0"
   },
   "scripts": {
-    "dev": "pnpx vercel dev:vite",
-    "dev:vite": "vite dev",
+    "dev": "bunx vercel develop",
+    "develop": "vite dev",
     "build": "vite build",
+    "build:api": "cargo build -r",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -21,12 +22,12 @@
   "devDependencies": {
     "@inlang/paraglide-js": "1.11.3",
     "@inlang/paraglide-sveltekit": "0.14.0",
-    "@sveltejs/adapter-static": "^3.0.6",
+    "@sveltejs/adapter-vercel": "^5.5.2",
     "@playwright/test": "1.49.1",
     "@sveltejs/kit": "2.10.1",
     "@sveltejs/vite-plugin-svelte": "5.0.1",
     "autoprefixer": "10.4.20",
-    "bits-ui": "^1.0.0-next.71",
+    "bits-ui": "^1.0.0-next.72",
     "clsx": "^2.1.1",
     "daisyui": "^4.12.22",
     "eslint": "^9.17.0",
@@ -45,13 +46,13 @@
     "tailwindcss-animate": "^1.0.7",
     "twglow": "^0.0.10",
     "typescript": "5.7.2",
+    "@tailwindcss/typography": "0.5.15",
+    "@tailwindcss/forms": "0.5.9",
     "vite": "6.0.3"
   },
   "dependencies": {
     "@fontsource-variable/space-grotesk": "^5.1.0",
     "@fontsource/space-mono": "^5.1.1",
-    "@tailwindcss/forms": "0.5.9",
-    "@tailwindcss/typography": "0.5.15",
     "carta-md": "^4.6.7"
   }
 }

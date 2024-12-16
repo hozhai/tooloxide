@@ -1,5 +1,5 @@
 [package]
-name = "toorust-api"
+name = "tooloxide-api"
 version = "0.1.0"
 edition = "2021"
 
@@ -11,12 +11,12 @@ vercel_runtime = { version = "1" }
 url = "2.5.4"
 
 [lib]
-path = "api/util.rs"
+path = "rust/util.rs"
 
 # Each handler has to be specified as [[bin]]
 [[bin]]
-name = "helloworld"
-path = "api/hello_world.rs"
+name = "hello"
+path = "api/hello.rs"
 
 # [workspace]
 # members = [

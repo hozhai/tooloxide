@@ -957,7 +957,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "toorust-api"
+name = "tooloxide-api"
 version = "0.1.0"
 dependencies = [
  "serde",
