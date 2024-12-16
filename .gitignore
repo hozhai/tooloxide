@@ -27,4 +27,4 @@ vite.config.ts.timestamp-*
 src/lib/paraglide
 
 # Rust
-target/
+target
