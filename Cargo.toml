@@ -18,17 +18,18 @@ path = "rust/util.rs"
 name = "hello"
 path = "api/hello.rs"
 
-# [workspace]
-# members = [
-#   "tools/add",
-#   # Add more tool directories as needed
-# ]
+[[bin]]
+name = "search"
+path = "api/search.rs"
 
-# [workspace.package]
-# version = "0.1.0"
-# edition = "2021"
-# authors = ["Hongmeng Zhai <zhaihongmeng@gmail.com>"]
+[workspace]
+members = ["rust/add"]
 
-# [workspace.dependencies]
-# wasm-bindgen = "0.2.97"
-# console_error_panic_hook = { version = "0.1.7" }
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Hongmeng Zhai <zhaihongmeng@gmail.com>"]
+
+[workspace.dependencies]
+wasm-bindgen = "0.2.97"
+console_error_panic_hook = { version = "0.1.7" }

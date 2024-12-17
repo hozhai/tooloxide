@@ -1,0 +1,15 @@
+[package]
+name = "add"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+wasm-bindgen = { workspace = true }
+console_error_panic_hook = { workspace = true, optional = true }

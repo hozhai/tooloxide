@@ -8,10 +8,12 @@
     "node": ">=22.11.0"
   },
   "scripts": {
-    "dev": "bunx vercel develop",
+    "dev": "bun build:rust && bunx vercel develop",
     "develop": "vite dev",
-    "build": "vite build",
+    "build": "bun build:rust && vite build",
     "build:api": "cargo build -r",
+    "build:wasm": "./build_wasm.sh",
+    "build:rust": "bun build:api && bun build:wasm",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -22,10 +24,12 @@
   "devDependencies": {
     "@inlang/paraglide-js": "1.11.3",
     "@inlang/paraglide-sveltekit": "0.14.0",
-    "@sveltejs/adapter-vercel": "^5.5.2",
     "@playwright/test": "1.49.1",
+    "@sveltejs/adapter-vercel": "^5.5.2",
     "@sveltejs/kit": "2.10.1",
     "@sveltejs/vite-plugin-svelte": "5.0.1",
+    "@tailwindcss/forms": "0.5.9",
+    "@tailwindcss/typography": "0.5.15",
     "autoprefixer": "10.4.20",
     "bits-ui": "^1.0.0-next.72",
     "clsx": "^2.1.1",
@@ -46,8 +50,6 @@
     "tailwindcss-animate": "^1.0.7",
     "twglow": "^0.0.10",
     "typescript": "5.7.2",
-    "@tailwindcss/typography": "0.5.15",
-    "@tailwindcss/forms": "0.5.9",
     "vite": "6.0.3"
   },
   "dependencies": {

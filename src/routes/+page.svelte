@@ -1,7 +1,6 @@
 <script lang="ts">
   import ThemeToggle from "$lib/components/ThemeToggle.svelte";
   import {
-    Command,
     CommandDialog,
     CommandEmpty,
     CommandGroup,
@@ -9,11 +8,19 @@
     CommandItem,
     CommandList,
     CommandSeparator,
-    CommandShortcut,
   } from "$lib/components/ui/command/index";
+  import type { SearchAPI } from "$lib/api";
 
-  let open = $state(false);
-  let metaKeyPressed = false;
+  let open: boolean = $state(false);
+  let metaKeyPressed: boolean = false;
+  let value = $state("");
+
+  async function fetchResults($value: string) {
+    const req = await fetch(`api/${$value}`);
+    const res: SearchAPI = await req.json();
+
+    return res.query.results;
+  }
 
   function onKeyDown(event: KeyboardEvent) {
     if (event.repeat) return;
@@ -58,7 +65,7 @@
           ⌘ X
         </button>
       </span>
-      <h1 class="text-glow-foreground font-sans text-8xl font-black">
+      <h1 class="font-sans text-8xl font-black text-glow-foreground">
         Toolshed
       </h1>
       <h2 class="font-mono italic">tools that go → the point</h2>
@@ -69,8 +76,11 @@
   </div>
 </div>
 
-<CommandDialog bind:open>
-  <CommandInput placeholder="Type a command or search..." />
+<CommandDialog bind:open shouldFilter={false}>
+  <CommandInput
+    placeholder="Type a command or search..."
+    bind:value
+  />
   <CommandList>
     <CommandEmpty>No results found.</CommandEmpty>
     <CommandGroup heading="Suggestions">

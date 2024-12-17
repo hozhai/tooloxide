@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
 for file in rust/*; do
-  wasm-pack build --target web --out-dir pkg/${$file%.*} $file
+  if [[ "$(basename "$file")" == "util.rs" ]]; then
+    continue
+  fi
+  cd "$file" && wasm-pack build --target web --out-dir ../../src/lib/pkg/$(basename "${file%.*}")
+  cd ../..
 done
