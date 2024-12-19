@@ -7,9 +7,19 @@ use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
 
 #[derive(Serialize)]
 struct Tool {
-    id: String,
     name: String,
     description: String,
+    url: String,
+}
+
+impl Tool {
+    pub fn new(name: &str, description: &str, url: &str) -> Tool {
+        Tool {
+            name: name.into(),
+            description: description.into(),
+            url: url.into(),
+        }
+    }
 }
 
 #[tokio::main]
@@ -32,16 +42,12 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
         .collect::<HashMap<String, String>>();
 
     let tools = vec![
-        Tool {
-            id: "add".to_string(),
-            name: "Add".to_string(),
-            description: "Simple addition calculator".to_string(),
-        },
-        Tool {
-            id: "alert".to_string(),
-            name: "Alert".to_string(),
-            description: "Document API alert tester".to_string(),
-        },
+        Tool::new("alert", "Test the alert() web API", "alert"),
+        Tool::new(
+            "calculator",
+            "A simple basic calculator",
+            "basic-calculator",
+        ),
     ];
 
     let query = query_params
@@ -49,9 +55,15 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
         .unwrap_or(&"".to_string())
         .to_lowercase();
 
-    let mut results: Vec<&Tool> = tools
-        .iter()
-        .filter(|tool| tool.name.to_lowercase().contains(&query))
+    let mut results: Vec<Tool> = tools
+        .into_iter()
+        .filter(|tool| {
+            tool.name.to_lowercase().contains(&query.to_lowercase())
+                || tool
+                    .description
+                    .to_lowercase()
+                    .contains(&query.to_lowercase())
+        })
         .collect();
 
     Ok(Response::builder()

@@ -1,11 +1,11 @@
 [package]
-name = "add"
+name = "greet"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
 
 [lib]
-crate-type = ["cdylib", "rlib"]
+crate-type = ["cdylib"]
 
 [features]
 default = ["console_error_panic_hook"]
