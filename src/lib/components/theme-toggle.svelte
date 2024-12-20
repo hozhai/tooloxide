@@ -1,21 +1,19 @@
 <!-- DaisyUI Theme Controller -->
 <script lang="ts">
-  import { isDark } from "$lib/dark_mode.svelte";
-  let isChecked = $state(isDark);
+  import { onMount } from "svelte";
+
+  let isChecked = $state<boolean>(false);
+
+  onMount(() => {
+    isChecked = JSON.parse(localStorage.getItem("isdark") ?? "false");
+  });
 
   $effect(() => {
-    localStorage.setItem("isdark", isChecked);
+    localStorage.setItem("isdark", JSON.stringify(isChecked));
   });
 </script>
 
 <label class="flex cursor-pointer justify-center gap-2">
-  <input
-    type="checkbox"
-    value="coffee"
-    class="theme-controller toggle"
-    bind:checked={isChecked}
-  />
-
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -32,6 +30,14 @@
       d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
     />
   </svg>
+
+  <input
+    type="checkbox"
+    value="coffee"
+    class="theme-controller toggle"
+    bind:checked={isChecked}
+  />
+
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"

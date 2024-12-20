@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@inlang/paraglide-js": "1.11.3",
-    "@inlang/paraglide-sveltekit": "0.14.0",
+    "@inlang/paraglide-sveltekit": "0.15.0",
     "@playwright/test": "1.49.1",
     "@sveltejs/adapter-vercel": "^5.5.2",
     "@sveltejs/kit": "2.10.1",
@@ -50,7 +50,8 @@
     "tailwindcss-animate": "^1.0.7",
     "twglow": "^0.0.10",
     "typescript": "5.7.2",
-    "vite": "6.0.3"
+    "vite": "6.0.3",
+    "vercel": "^39.2.2"
   },
   "dependencies": {
     "@fontsource-variable/space-grotesk": "^5.1.0",

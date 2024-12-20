@@ -42,9 +42,9 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
         .collect::<HashMap<String, String>>();
 
     let tools = vec![
-        Tool::new("alert", "Test the alert() web API", "alert"),
+        Tool::new("Alert", "Test the alert() web API", "alert"),
         Tool::new(
-            "calculator",
+            "Calculator",
             "A simple basic calculator",
             "basic-calculator",
         ),
@@ -64,7 +64,9 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
                     .to_lowercase()
                     .contains(&query.to_lowercase())
         })
-        .collect();
+        .collect::<Vec<Tool>>();
+
+    results.truncate(6);
 
     Ok(Response::builder()
         .status(StatusCode::OK)
@@ -81,7 +83,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
                 "path": url.path(),
                 "query": {
                     "term": query_params.get("q"),
-                    "results": results.truncate(6)
+                    "results": results
                 },
                 "headers": {
                     "userAgent": user_agent

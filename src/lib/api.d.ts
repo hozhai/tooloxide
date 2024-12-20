@@ -15,6 +15,6 @@ export interface SearchAPI {
   path: string;
   query: {
     results: SearchAPIElem[];
-    query: string;
+    term: string;
   };
 }

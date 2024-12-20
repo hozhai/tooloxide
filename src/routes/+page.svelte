@@ -1,6 +1,6 @@
 <script lang="ts">
-  import ThemeToggle from "$lib/components/ThemeToggle.svelte";
-  import Search from "$lib/components/Search.svelte";
+  import ThemeToggle from "$lib/components/theme-toggle.svelte";
+  import Search from "$lib/components/search.svelte";
 </script>
 
 <svelte:head>
