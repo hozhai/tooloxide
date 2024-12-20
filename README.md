@@ -26,11 +26,11 @@ I just want to offer a FOSS solution that is self-hostable, free, doesn't look l
 ## The Stack
 
 Tooloxide is currently built with
-- [TypeScript](https://www.typescriptlang.org/) for type safety
-- [Svelte 5 + SvelteKit](https://svelte.dev/) + [Vite](https://vite.dev/) for the web framework
+- [TypeScript](https://www.typescriptlang.org/) 
+- [Svelte 5 + SvelteKit](https://svelte.dev/) + [Vite](https://vite.dev/)
 - [Rust](https://www.rust-lang.org/) compiled to [WebAssembly](https://webassembly.org/) with [`wasm-bindgen`](https://github.com/rustwasm/wasm-bindgen) and [Vercel's serverless functions](https://vercel.com/docs/functions) running the [Rust runtime](https://github.com/vercel-community/rust) to get that juicy 🦀⚡️ blazingly fast performance
-- [TailwindCSS](https://tailwindcss.com/) for, well, CSS
-- [DaisyUI](https://daisyui.com/) and [shadcn-svelte](https://www.shadcn-svelte.com/) for UI components
+- [TailwindCSS](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/) and [shadcn-svelte](https://www.shadcn-svelte.com/)
 
 ## Hosting Your Own Version
 
