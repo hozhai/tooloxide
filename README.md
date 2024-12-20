@@ -34,8 +34,8 @@ Tooloxide is currently built with
 
 ## 📋 TODO
 
-- [] add per-keyboard keybind display in search.svelte
-- [] revamp search.svelte to no longer fully rely on shadcn-svelte's Command component but instead a full screen search and browse window
+- [ ] add per-keyboard keybind display in search.svelte
+- [ ] revamp search.svelte to no longer fully rely on shadcn-svelte's Command component but instead a full screen search and browse window
 
 ## 🚀 Hosting Your Own Version
 
