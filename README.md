@@ -1,13 +1,13 @@
-# Tooloxide
+# 🛠️ Tooloxide
 
 > [!IMPORTANT]
-> This is not finished. This is in early development. This __**currently**__ does **not** work - at all.
+> ❌ This is not finished. This is in early development. This __**currently**__ does **not** work - at all.
 
-## What is this?
+## 💻 What is this?
 
 [Tooloxide](https://github.com/hozhai/tooloxide) is an open-source website serving as a collection of online tools that are designed to be free to use with no ads thanks to only needing a serverless environment, meaning you can host your own fork on platforms such as [Vercel](https://vercel.com/) or [Netlify](https://netlify.com/) (you will have to modify the serverless functions in that case), et cetera.
 
-## But why?
+## ⁉️ But why?
 The main motive for the creation of this project is to solve the lack of *competent** online tool websites that are easily found within a reasonable timeframe.
 
 By *competent* I mean the posession of the following simple characteristics:
@@ -23,7 +23,7 @@ Some might say that this cannot be expected from most online tool sites and that
 
 I just want to offer a FOSS solution that is self-hostable, free, doesn't look like it was made with Bootstrap v2.3.2 from 2013 (I love the style though), and doesn't litter you with ads.
 
-## The Stack
+## 📚 The Stack
 
 Tooloxide is currently built with
 - [TypeScript](https://www.typescriptlang.org/) 
@@ -32,7 +32,12 @@ Tooloxide is currently built with
 - [TailwindCSS](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/) and [shadcn-svelte](https://www.shadcn-svelte.com/)
 
-## Hosting Your Own Version
+## 📋 TODO
+
+- [] add per-keyboard keybind display in search.svelte
+- [] revamp search.svelte to no longer fully rely on shadcn-svelte's Command component but instead a full screen search and browse window
+
+## 🚀 Hosting Your Own Version
 
 Tooloxide aims to be a decentralized project allowing anyone to host their own version with a centralized (yet private and secure) deployment at <https://tooloxide.vercel.app>.
 
@@ -97,10 +102,10 @@ After having cloned and initialized the repository, if you've followed the instr
 
 If you are working with [Netlify](https://netlify.com/), then good luck, I don't know how to use it.
 
-## Contributing
+## 🌱 Contributing
 
 Contributions are always welcome. If you don't know how to fix a problem, [create an issue](https://github.com/hozhai/tooloxide/issues/new) and wait. If you do know how to fix a problem, [create an issue](https://github.com/hozhai/tooloxide/issues/new) and mention that you'll be working on a fix, fork the repo, then [create a PR](https://github.com/hozhai/tooloxide/compare).
 
 Your commits should have a verb in simple present tense (add, modify, remove) and the subject you have done a change on. Or just use AI, I can't stop you anyway.
 
-You can add new tools, create a wiki, do anything, as long as it LGTM.
+You can add new tools, create a wiki, do anything, as long as it LGTM you're chilling.
